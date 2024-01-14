@@ -58,7 +58,7 @@ export class LoginPage extends ComponentBase implements OnInit, OnDestroy {
             }
             console.log(res);
             this.modalInfoService.success('Login successfully', '');
-            // window.location.href = '/dashboard/demo-one';
+            window.location.href = '/apps/products';
           },
           (login) => {
             this.modalInfoService.error('Something is wrong', login || '');

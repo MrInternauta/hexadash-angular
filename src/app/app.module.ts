@@ -51,9 +51,7 @@ registerLocaleData(en);
     NgApexchartsModule,
     FullCalendarModule,
     AngularSvgIconModule.forRoot(),
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() , connectInZone: true}),
+    // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [
     {

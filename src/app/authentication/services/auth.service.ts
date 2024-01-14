@@ -74,15 +74,15 @@ export class AuthService {
   }
 
   async hasSession() {
-    this.store
+    const session = await this.store
       .pipe(select(ConstantsHelper.USER_DATA_KEY_STORAGE))
-      .subscribe((session) => {
-        console.log(session);
-      });
-    return false;
-    // return (
-    //   session?.id != null && session?.token != null && session?.user != null
-    // );
+      .toPromise();
+
+    console.log(session);
+
+    return (
+      session?.id != null && session?.token != null && session?.user != null
+    );
   }
 
   logout() {
@@ -97,7 +97,6 @@ export class AuthService {
     );
 
     if (localStorageAuth?.user && localStorageAuth?.token) {
-      // this.token = localStorageAuth.token;
       const user: UserDto = JSON.parse(localStorageAuth.user);
       if (!user) {
         return;
@@ -110,8 +109,6 @@ export class AuthService {
           token: localStorageAuth.token as Token,
         })
       );
-
-      this.store.select('session_data').subscribe(console.log);
 
       //this._auth = auth;
     }

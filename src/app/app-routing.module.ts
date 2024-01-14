@@ -18,13 +18,11 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    // canActivate: [LoginGuardGuard],
     component: CommonLayoutComponent,
     children: CommonLayout_ROUTES,
   },
   {
     path: '',
-    // canActivate: [LogoutGuard],
     component: FullLayoutComponent,
     children: FullLayout_ROUTES,
   },

@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 import { ComponentsComponent } from '../../components/components.component';
+import { LoginGuardGuard } from '../../core/guards/login-guard.guard';
 
 export const CommonLayout_ROUTES: Routes = [
   //Dashboard
   {
+    canActivate: [LoginGuardGuard],
     path: 'dashboard',
     loadChildren: () =>
       import('../../dashboard/dashboard.module').then((m) => m.DashboardModule),
@@ -11,6 +13,7 @@ export const CommonLayout_ROUTES: Routes = [
 
   // Charts
   {
+    canActivate: [LoginGuardGuard],
     path: 'changelog',
     children: [
       {
@@ -30,6 +33,7 @@ export const CommonLayout_ROUTES: Routes = [
 
   //Apps
   {
+    canActivate: [LoginGuardGuard],
     path: 'apps',
     data: {
       title: 'Apps',
@@ -50,6 +54,7 @@ export const CommonLayout_ROUTES: Routes = [
 
   //Component
   {
+    canActivate: [LoginGuardGuard],
     path: 'demo',
     component: ComponentsComponent,
     children: [
@@ -68,6 +73,7 @@ export const CommonLayout_ROUTES: Routes = [
 
   // Charts
   {
+    canActivate: [LoginGuardGuard],
     path: 'features',
     data: {
       title: 'features',
@@ -90,6 +96,7 @@ export const CommonLayout_ROUTES: Routes = [
 
   //Pages
   {
+    canActivate: [LoginGuardGuard],
     path: 'pages',
     data: {
       title: 'Pages ',
