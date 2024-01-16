@@ -2,6 +2,51 @@ import { SideNavInterface } from '../../interfaces/side-nav.type';
 
 export const ROUTES: SideNavInterface[] = [
   {
+    path: 'dash',
+    title: 'Dashboard',
+    iconType: 'nzIcon',
+    iconTheme: 'outline',
+    icon: 'fund-projection-screen',
+    submenu: []
+  },
+
+  {
+    path: 'apps/products',
+    title: 'Products',
+    iconType: 'nzIcon',
+    iconTheme: 'outline',
+    icon: 'tags',
+    submenu: [
+      {
+        path: 'categories',
+        title: 'Categories',
+        iconType: 'nzIcon',
+        iconTheme: 'outline',
+        icon: 'tags',
+        submenu: []
+      }
+    ]
+  },
+
+  {
+    path: 'users',
+    title: 'Users',
+    iconType: 'nzIcon',
+    iconTheme: 'outline',
+    icon: 'user',
+    submenu: [
+      {
+        path: 'roles',
+        title: 'Roles',
+        iconType: 'nzIcon',
+        iconTheme: 'outline',
+        icon: 'setting',
+        submenu: []
+      },
+    ]
+  },
+
+  {
     path: '',
     title: 'Dashboard',
     iconType: 'nzIcon',
